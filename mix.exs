@@ -2,7 +2,7 @@ defmodule Device.Library.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :devicelib,
+    [app: :device_library,
      version: "0.1.0",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
