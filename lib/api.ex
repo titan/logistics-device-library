@@ -48,6 +48,7 @@ defmodule Device.Api do
 
   |code|reason|
   |----|------|
+  |403|非法域访问|
   |404|设备不存在|
   |500|服务内部错误|
 
@@ -85,6 +86,7 @@ defmodule Device.Api do
 
   |code|reason|
   |----|------|
+  |403|非法域访问|
   |404|设备不存在|
   |500|服务内部错误|
 
