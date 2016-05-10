@@ -31,7 +31,6 @@ defmodule Device.Api do
   |caller|Caller|调用者|
   |did|uuid|设备 ID|
   |name|string|名字|
-  |firmware|string|固件版本|
   |data_stream_frequency|int|数据流更新频率|
   |status_stream_frequency|int|状态流更新频率|
   |configs|string=>string|设备配置|
@@ -60,9 +59,9 @@ defmodule Device.Api do
   since: 0.1.0
 
   """
-  @spec create(Caller.t, uuid, String.t, String.t, non_neg_integer, non_neg_integer, %{String.t => String.t}, non_neg_integer, boolean) :: :ok | {:error, code, reason}
-  def create(caller, did, name, firmware, data_stream_frequency, status_stream_frequency, configs, metrics, enabled \\ true) do
-    remote_call(:create, [caller, did, name, firmware, data_stream_frequency, status_stream_frequency, configs, metrics, enabled])
+  @spec create(Caller.t, uuid, String.t, non_neg_integer, non_neg_integer, %{String.t => String.t}, non_neg_integer, boolean) :: :ok | {:error, code, reason}
+  def create(caller, did, name, data_stream_frequency, status_stream_frequency, configs, metrics, enabled \\ true) do
+    remote_call(:create, [caller, did, name, data_stream_frequency, status_stream_frequency, configs, metrics, enabled])
   end
 
   @doc """
